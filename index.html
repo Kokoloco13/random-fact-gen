@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <title> Random Fact Generator </title>
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    button{
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Random Fact Generator!</h1>
+  <button id="genButton" onclick="genFact()">Click to generate a random fact!</button>
+  <p id="fact">Loading...</p>
+  <script>
+    const facts = [
+      "The sky is blue",
+      "Bananas are epic",
+      "Most living people are alive",
+      "I am not 1 year old",
+      "I exist",
+      "Most 29 year olds don't watch Cocomelon",
+      "The earth is more than 3 years old",
+      "Hi is not the longest word in English",
+      "Ducks exist",
+      "This is a website"
+    ]
+    window.onload = () => {
+      genFact()
+    }
+    let genFact = () => {
+      document.getElementById("fact").innerHTML = 'Random fact: ' + facts[Math.floor(Math.random() * facts.length)] + '!'
+    }
+  </script>
+</body>
+
+</html>
